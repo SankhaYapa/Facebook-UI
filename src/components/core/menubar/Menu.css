@@ -1,0 +1,17 @@
+.Menu-main {
+    width: 130px;
+    height: 40px;
+    margin: 5px;
+    font-size: 1.6em;
+    color: rgb(103, 103, 103);
+}
+
+.Menu-badge {
+    background-color: red;
+    padding: 6px;
+    font-size: 0.6em;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    position: absolute !important;
+    top: 5px !important;
+}
