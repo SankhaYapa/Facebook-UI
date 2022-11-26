@@ -1,4 +1,7 @@
 .Header-main {
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
     height: 50px;
+    position: sticky;
+    top: 0;
+    /* z-index: 999; */
 }

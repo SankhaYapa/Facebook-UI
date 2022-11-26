@@ -1,0 +1,11 @@
+.Profile-main {
+    width: 125px;
+    float: left;
+}
+
+.Profile-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin: 10px;
+}

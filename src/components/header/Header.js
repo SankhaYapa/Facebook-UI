@@ -1,3 +1,4 @@
+import Button from "../core/button/Button";
 import Logo from "../core/logo/Logo";
 import MenuBar from "../core/menubar/MenuBar";
 import Profile from "../core/profile/Profile";
@@ -16,7 +17,11 @@ function Header() {
           <MenuBar></MenuBar>
         </div>
         <div class="col-md-3">
-          <Profile name="Sankha Yapa"></Profile>
+          <Profile name="Sankha"></Profile>
+          <Button icon="fa fa-plus"></Button>
+          <Button icon="fa fa-comment" count="5"></Button>
+          <Button icon="fa fa-bell" count="5"></Button>
+          <Button icon="fa fa-caret-down"></Button>
         </div>
       </div>
     </div>
