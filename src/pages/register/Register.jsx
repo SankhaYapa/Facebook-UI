@@ -2,8 +2,9 @@ import "./register.css";
 import { useRef } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { Link } from "@mui/material";
-
+import { CircularProgress, Link } from "@mui/material";
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 export default function Register() {
   const username = useRef();
   const email = useRef();
@@ -11,6 +12,7 @@ export default function Register() {
   const passwordAgain = useRef();
   const navigate = useNavigate();
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
 
   const handleClick = async (e) => {
     e.preventDefault();
@@ -29,6 +31,10 @@ export default function Register() {
         console.log(error);
       }
     }
+  };
+
+  const routeChange = () => {
+    navigate("/login");
   };
   return (
     <div className="login">
@@ -73,13 +79,18 @@ export default function Register() {
               required
               type="password"
             />
-            <button className="loginButton" type="submit">
-              Sign Up
+
+            <button className="loginButton" type="submit" disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress color="secondary" size="20px" />
+              ) : (
+                "Sign Up"
+              )}
             </button>
             <div className="loginRegister">
               <span className="notamem">Not a member?</span>
               <Link to="/login">
-                <button className="loginRegisterButton">
+                <button className="loginRegisterButton" onClick={routeChange}>
                   Log into Account
                 </button>
               </Link>

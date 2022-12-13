@@ -30,12 +30,13 @@
     justify-content: center;
 }
 
-.loginLogo {
+
+/* .loginLogo {
     font-size: 50px;
     font-weight: 800;
     color: #1775ee;
     margin-bottom: 10px;
-}
+} */
 
 .loginDesc {
     font-size: 24px;
@@ -80,8 +81,8 @@
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    background: rgb(145, 15, 214);
-    background: linear-gradient( 350deg, rgb(96, 31, 247) 19%, rgba(0, 212, 255, 1) 100%);
+    background: rgb(20, 16, 253);
+    background: linear-gradient( 350deg, rgb(13, 17, 243) 19%, rgba(0, 212, 255, 1) 100%);
     margin-bottom: 25px;
 }
 

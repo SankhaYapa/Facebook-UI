@@ -5,6 +5,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { CircularProgress } from "@mui/material";
 import { Email } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const email = useRef();
   const password = useRef();
@@ -17,6 +19,11 @@ export default function Login() {
       dispatch
     );
   };
+  let navigate = useNavigate();
+  const routeChange = () => {
+    navigate("/register");
+  };
+
   console.log(user);
   return (
     <div className="login">
@@ -39,7 +46,6 @@ export default function Login() {
               required
               className="loginInput"
               ref={email}
-              prefix={<Email />}
             />
 
             <input
@@ -49,7 +55,6 @@ export default function Login() {
               minLength="6"
               className="loginInput"
               ref={password}
-              prefix={<Email />}
             />
             <button className="loginButton" disabled={isFetching}>
               {isFetching ? (
@@ -61,13 +66,25 @@ export default function Login() {
             <span className="loginForgot">Forgot Password?</span>
             <div className="loginRegister">
               <span className="notamem">Not a member?</span>
-              <button className="loginRegisterButton">
-                {isFetching ? (
+              <Link to={"/register"}>
+                <button className="loginRegisterButton" onClick={routeChange}>
+                  {/* {isFetching ? (
                   <CircularProgress color="secondary" size="20px" />
                 ) : (
                   "Create a New Account"
-                )}
-              </button>
+                )} */}
+                  Create a New Account
+                </button>
+              </Link>
+            </div>
+            <div className="Logodiv">
+              <img src={PF + "/logo.png"} alt="" className="LogoImg" />
+              <div className="LogoName">
+                <span className="loginLogo">SL GUIDER</span>
+                <span className="details">
+                  Share Your Taveling Idea With Friends
+                </span>
+              </div>
             </div>
           </form>
         </div>
