@@ -5,6 +5,7 @@ import Register from "./pages/register/Register";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Messanger from "./pages/messanger/Messanger";
 function App() {
   const { user } = useContext(AuthContext);
   return (
@@ -15,6 +16,10 @@ function App() {
         <Route
           path="/register"
           element={user ? <Home /> : <Register />}
+        ></Route>
+        <Route
+          path="/messanger"
+          element={user ? <Messanger /> : <Register />}
         ></Route>
         <Route path="/profile/:username" element={<Profile />}></Route>
       </Routes>
